@@ -1,0 +1,70 @@
+---
+title: "FA7 Part 1"
+author: "Diche, Jasmine & Hermosada, Joshua"
+date: "10/07/2026"
+output: pdf_document
+---
+```{r}
+# Paste stopwatch time (seconds) here
+wait_time <- c(6,15,3,5,11,9,6,4,23,19,34,8,3,18,16,7,4,4,4,6,8,41,38,19,3,14,49,9,3,6)
+
+# Mean and lambda (rate)
+mean_wait <- mean(wait_time)
+lambda <- 1/mean_wait
+
+# Print
+print(paste0("Total students:", length(wait_time)))
+print(paste0("Average gap between students:", round(mean_wait, 2), "seconds"))
+print(paste0("Lambda (arrival rate):", round(lambda, 5)))
+
+#Plot histogram of wait times
+hist(wait_time, freq=FALSE, col = "skyblue",
+    main = "Time waited at Campus Gate",
+    xlab = "Seconds Between Arrivals")
+    
+curve(dexp(x, rate = lambda), add = TRUE, col = "red", lwd = 2)
+```
+
+**\underline{Verification of the Exponential Distribution:}**
+
+The exponential distribution is applicable to this scenario because student arrivals at the campus gate satisfy the two core assumptions:
+
+1. **\underline{Randomness:}** Students arrive individually based on their own personal class schedules and habits, making the exact timing of each arrival random.
+
+2. **\underline{Independence:}** One student passing through the gate does not cause or prevent another student from arriving; each arrival event happens independently of the others.
+
+**\(\underline{Key Parameters and Formulas:}\)**
+
+* **Mean (Expected Value):** \(E(X) = \frac{1}{\lambda} = `r round(mean_wait, 2)`\) seconds
+* **Lambda (Rate Parameter):** \(\lambda = `r round(lambda, 5)`\) arrivals per second
+
+* **Probability Density Function (PDF):**
+\[f(x) = \lambda e^{-\lambda x} = 0.07595 e^{-0.07595 x}, \quad x \geq 0\]
+
+* **Cumulative Distribution Function (CDF):**
+\[P(X \leq x) = 1 - e^{-\lambda x} = 1 - e^{-0.07595 x}\]
+
+
+**\(\underline{Interpretation of Results:}\)**
+
+* **Likelihood Calculation:** 
+Using our cumulative distribution function, we can determine the probability that a new student arrives at the campus gate within **10 seconds** of the previous arrival:
+\[P(X \leq 10) = 1 - e^{-0.07595 \times 10} = 1 - e^{-0.7595} \approx 0.5321\]
+This means there is a **53.21% chance** that the gap between any two arriving students is 10 seconds or less.
+
+* **Practical Implications:**
+The expected average waiting time between student arrivals is **13.17 seconds**. Because the data follows an exponential distribution, short gaps are highly frequent (as shown by the tall histogram bars between 0 and 10 seconds), while long gaps over 30 seconds are rare outliers. For campus operations, this predictable flow suggests that security or check-in staff at the gate will experience continuous, rapid individual arrivals rather than sudden large batches of students all at once.
+
+**\(\underline{Report Findings and Summary:}\)**
+
+* **Chosen Scenario:** 
+This study analyzes the arrival patterns of students entering our university campus through **Gate 4**. The objective was to determine whether the time intervals between individual arrivals follow an exponential distribution model.
+
+* **Data Collection Process:** 
+Data was collected on an afternoon by sitting directly near Gate 4. A smartphone stopwatch application was utilized to log precise timestamps, hitting the "Lap" feature every time a student passed through the gate. To capture a natural, unforced flow of arrivals rather than a highly regimented rush hour, observations began at **2:30 PM**, exactly 30 minutes before the major **3:00 PM** classroom transitional period. In total, a sample size of **30 consecutive data points** was successfully recorded.
+
+* **Computed Parameters:** 
+The calculated statistical metrics for this sample show an **Average Waiting Time (\(E(X)\)) of 13.17 seconds** between student arrivals. This yields an estimated arrival rate (**Lambda, \(\lambda\)**) of **0.07595 students per second**. 
+
+* **Interpretation and Real-World Implications:** 
+The empirical histogram aligns very smoothly with the theoretical exponential probability density curve. This strongly indicates that student arrivals at Gate 4 occur randomly and independently during this pre-rush period. The model shows a **53.21% probability** that a new student will arrive within 10 seconds of the previous one. Practically, this tells campus security and administrative staff that gate traffic during this period is a steady, continuous stream of individual arrivals rather than sudden clustered groups, allowing for smooth, manageable entry processing.
