@@ -73,11 +73,11 @@ Total: 50 students (100%)
 * **Within 2 Standard Deviations (33.47 to 296.53 PHP):** 100.00% of our students fall here.
 * **Within 3 Standard Deviations (-32.29 to 362.29 PHP):** 100.00% of our students fall here.
 
-### Data Interpretation (What it all means)
+### Interpretation
 
-* **Is it symmetric?** Yes, it is pretty well-balanced! There are 22 students who have below average budgets and 19 students who have above average budgets, with 9 students right in the middle. It has a bit of a flat top, but both sides match up nicely on the graph.
+* **Is the distribution symmetric?** Yes, it is pretty well-balanced! There are 22 students who have below average budgets and 19 students who have above average budgets, with 9 students right in the middle. It has a bit of a flat top, but both sides match up nicely on the graph.
 * **Are there outliers?** No, we have zero outliers. Since 100% of our students fit inside 2 standard deviations, nobody had an insanely huge or tiny lunch budget that ruined the chart.
-* **What does the shape imply?** The flat-topped shape means student allowances are spread out evenly across different budgets. We don't have everyone clustering around just one amount; campus has a big mix of low, middle, and high-allowance students.
-* **How is this useful in real life?** 
+* **What does the shape of the distribution imply?** The flat-topped shape means student allowances are spread out evenly across different budgets. We don't have everyone clustering around just one amount; campus has a big mix of low, middle, and high-allowance students.
+* **How can this data be useful?** 
   * **For Food Vendors:** Since 68% of students have a budget between roughly 99 PHP and 231 PHP, canteen stalls will make the most sales if they price their combo meals around 120 PHP to 150 PHP.
   * **For the School Welfare Committee:** We noticed that 24% of our surveyed students have a lunch budget of 100 PHP or less. This shows that the school needs to keep affordable, cheap meal options available so these students can still buy food.
