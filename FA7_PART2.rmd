@@ -1,0 +1,13 @@
+---
+title: "FA7 Part 2"
+author: "Diche, Jasmine & Hermosada, Joshua"
+date: "10/07/2026"
+output: pdf_document
+---
+```{r}
+library(readxl)
+lunch_money <- read_excel("fa7.xlsx")
+names(lunch_money)
+mean(lunch_money$`Lunch Money`, na.rm = TRUE)
+plot(lunch_money$`Lunch Money`, xlab = "Students", ylab = "Lunch Money", main = "Students' Alloted Money for Lunch", col = "pink" ) 
+```
