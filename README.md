@@ -61,7 +61,7 @@ After running our code in R, here is what we found from our 50 students:
 #### Frequency Table (How many students are in each price range)
 * 80 PHP: 4 students (8%)
 * 100 PHP: 8 students (16%)
-* 120 PHP: 10 students (20%) -- This is our biggest group!
+* 120 PHP: 10 students (20%)
 * 150 PHP: 9 students (18%)
 * 200 PHP: 7 students (14%)
 * 250 PHP: 6 students (12%)
