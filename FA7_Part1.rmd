@@ -5,8 +5,8 @@ date: "10/07/2026"
 output: pdf_document
 ---
 ```{r}
-# Paste stopwatch time (seconds) here
-wait_time <- c(6,15,3,5,11,9,6,4,23,19,34,8,3,18,16,7,4,4,4,6,8,41,38,19,3,14,49,9,3,6)
+# Stopwatch data
+wait_time <- c(6, 15, 3, 5, 11, 9, 6, 4, 23, 19, 34, 8, 3, 18, 16, 7, 4, 4, 4, 6, 8, 41, 38, 19, 3,14, 49, 9, 3, 6)
 
 # Mean and lambda (rate)
 mean_wait <- mean(wait_time)
