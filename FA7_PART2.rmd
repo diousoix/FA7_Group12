@@ -9,5 +9,24 @@ library(readxl)
 lunch_money <- read_excel("fa7.xlsx")
 names(lunch_money)
 mean(lunch_money$`Lunch Money`, na.rm = TRUE)
-plot(lunch_money$`Lunch Money`, xlab = "Students", ylab = "Lunch Money", main = "Students' Alloted Money for Lunch", col = "pink" ) 
+sd(lunch_money$`Lunch Money`, na.rm = TRUE)
+table(cut(lunch_money$`Lunch Money`, breaks = 5))
+
+# Plotting
+hist(lunch_money$`Lunch Money`, probability = TRUE, col = "lightblue", main = "Normal Distribution of Lunch Money", xlab = "Money Allotted")
+curve(dnorm(x, mean = 165, sd = 66.43), add = TRUE, col = "red", lwd = 2)
+
+money <- lunch_money$`Lunch Money`
+m <- 165
+s <- 66.43
+
+# 1 Standard Deviation
+cat("Percentage within 1 SD:", mean(money >= (m - s) & money <= (m + s)) * 100, "%\n")
+
+# 2 Standard Deviations
+cat("Percentage within 2 SD:", mean(money >= (m - 2*s) & money <= (m + 2*s)) * 100, "%\n")
+
+# 3 Standard Deviations
+cat("Percentage within 3 SD:", mean(money >= (m - 3*s) & money <= (m + 3*s)) * 100, "%\n")
+
 ```
